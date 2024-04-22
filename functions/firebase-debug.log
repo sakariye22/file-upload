@@ -1,0 +1,307 @@
+[debug] [2024-04-22T08:16:37.975Z] ----------------------------------------------------------------------
+[debug] [2024-04-22T08:16:37.976Z] Command:       /usr/local/bin/firebase /Users/zaki/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase serve --only functions
+[debug] [2024-04-22T08:16:37.977Z] CLI Version:   13.7.2
+[debug] [2024-04-22T08:16:37.977Z] Platform:      darwin
+[debug] [2024-04-22T08:16:37.977Z] Node Version:  v18.5.0
+[debug] [2024-04-22T08:16:37.985Z] Time:          Mon Apr 22 2024 10:16:37 GMT+0200 (Central European Summer Time)
+[debug] [2024-04-22T08:16:37.985Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-22T08:16:38.082Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-22T08:16:38.085Z] > authorizing via signed-in user (zakariyassaadaq@gmail.com)
+[debug] [2024-04-22T08:16:38.086Z] [iam] checking project test-firebase-e96b8 for permissions ["firebase.projects.get"]
+[debug] [2024-04-22T08:16:38.088Z] > refreshing access token with scopes: []
+[debug] [2024-04-22T08:16:38.090Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-04-22T08:16:38.091Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-04-22T08:16:38.303Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-04-22T08:16:38.306Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-04-22T08:16:38.343Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/test-firebase-e96b8:testIamPermissions [none]
+[debug] [2024-04-22T08:16:38.343Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/test-firebase-e96b8:testIamPermissions x-goog-quota-user=projects/test-firebase-e96b8
+[debug] [2024-04-22T08:16:38.344Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/test-firebase-e96b8:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-04-22T08:16:39.128Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/test-firebase-e96b8:testIamPermissions 200
+[debug] [2024-04-22T08:16:39.129Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/test-firebase-e96b8:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-04-22T08:16:39.132Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/test-firebase-e96b8 [none]
+[debug] [2024-04-22T08:16:39.445Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/test-firebase-e96b8 200
+[debug] [2024-04-22T08:16:39.445Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/test-firebase-e96b8 {"projectId":"test-firebase-e96b8","projectNumber":"56988968267","displayName":"test-firebase","name":"projects/test-firebase-e96b8","resources":{"hostingSite":"test-firebase-e96b8"},"state":"ACTIVE","etag":"1_4b333282-0e70-456d-9457-f79f19930c89"}
+[debug] [2024-04-22T08:16:39.450Z] defaultcredentials: writing to file /Users/zaki/.config/firebase/zakariyassaadaq_gmail_com_application_default_credentials.json
+[debug] [2024-04-22T08:16:39.453Z] Setting GAC to /Users/zaki/.config/firebase/zakariyassaadaq_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/zaki/.config/firebase/zakariyassaadaq_gmail_com_application_default_credentials.json"}}
+[debug] [2024-04-22T08:16:39.454Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/test-firebase-e96b8/adminSdkConfig [none]
+[debug] [2024-04-22T08:16:39.722Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/test-firebase-e96b8/adminSdkConfig 200
+[debug] [2024-04-22T08:16:39.723Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/test-firebase-e96b8/adminSdkConfig {"projectId":"test-firebase-e96b8","storageBucket":"test-firebase-e96b8.appspot.com"}
+[info] i  functions: Watching "/Users/zaki/Library/webb/lia-2/filhantering/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/zaki/Library/webb/lia-2/filhantering/functions\" for Cloud Functions..."}}
+[debug] [2024-04-22T08:16:39.768Z] Validating nodejs source
+[debug] [2024-04-22T08:16:40.789Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "service": "nodemon service.js"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "mongodb": "^5.9.1",
+    "mongoose": "^8.3.2",
+    "multer": "^1.4.4",
+    "multer-gridfs-storage": "^5.0.2",
+    "nodemon": "^3.1.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-22T08:16:40.790Z] Building nodejs source
+[debug] [2024-04-22T08:16:40.791Z] Failed to find version of module node: reached end of search path /Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-04-22T08:16:40.796Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-22T08:16:40.814Z] Found firebase-functions binary at '/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8400
+
+[debug] [2024-04-22T08:16:41.851Z] Got response from /__/functions.yaml {"endpoints":{"api":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] Connected to MongoDB
+
+[info] Connection time: 569 ms
+GridFSBucket initialized
+
+[info] ✔  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[info] ✔  functions[us-central1-api]: http function initialized (http://localhost:5000/test-firebase-e96b8/us-central1/api). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5000/test-firebase-e96b8/us-central1/api)."}}
+[debug] [2024-04-22T08:18:48.362Z] [work-queue] {"queuedWork":["/test-firebase-e96b8/us-central1/api/api/login/user-2024-04-22T08:18:48.360Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:18:48.370Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/test-firebase-e96b8/us-central1/api/api/login/user-2024-04-22T08:18:48.360Z"],"workRunningCount":1}
+[debug] [2024-04-22T08:18:48.373Z] Accepted request OPTIONS /test-firebase-e96b8/us-central1/api/api/login/user --> us-central1-api
+[debug] [2024-04-22T08:18:48.379Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-22T08:18:48.386Z] [functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/login/user, mapping to path=/api/login/user {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/login/user, mapping to path=/api/login/user"}}
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-04-22T08:18:48.487Z] [worker-pool] addWorker(us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-api)"}}
+[debug] [2024-04-22T08:18:48.490Z] [worker-pool] Adding worker with key us-central1-api, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-api, total=1"}}
+[debug] [2024-04-22T08:18:50.022Z] [runtime-status] [45631] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.1","resolution":"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [45631] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2024-04-22T08:18:50.026Z] [runtime-status] [45631] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.9.0","resolution":"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [45631] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.9.0\",\"resolution\":\"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-04-22T08:18:50.029Z] [runtime-status] [45631] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [45631] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2024-04-22T08:18:50.029Z] [runtime-status] [45631] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.9.0","resolution":"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [45631] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.9.0\",\"resolution\":\"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-04-22T08:18:50.204Z] [runtime-status] [45631] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [45631] Checked functions.config() {\"config\":{}}"}}
+[debug] [2024-04-22T08:18:50.204Z] [runtime-status] [45631] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.9.0","resolution":"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-functions/lib/v1/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [45631] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.9.0\",\"resolution\":\"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-functions/lib/v1/index.js\"}}"}}
+[debug] [2024-04-22T08:18:50.205Z] [runtime-status] [45631] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.9.0","resolution":"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [45631] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.9.0\",\"resolution\":\"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-04-22T08:18:50.205Z] [runtime-status] [45631] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.1","resolution":"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [45631] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2024-04-22T08:18:50.208Z] [runtime-status] [45631] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.9.0","resolution":"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [45631] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.9.0\",\"resolution\":\"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-04-22T08:18:50.208Z] [runtime-status] [45631] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"11.11.1","resolution":"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [45631] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"/Users/zaki/Library/webb/lia-2/filhantering/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2024-04-22T08:18:50.653Z] [runtime-status] [45631] Functions runtime initialized. {"cwd":"/Users/zaki/Library/webb/lia-2/filhantering/functions","node_version":"18.5.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [45631] Functions runtime initialized. {\"cwd\":\"/Users/zaki/Library/webb/lia-2/filhantering/functions\",\"node_version\":\"18.5.0\"}"}}
+[debug] [2024-04-22T08:18:50.655Z] [runtime-status] [45631] Listening to port: /var/folders/y3/959kxsqs3tq53k92sl8pkqr40000gn/T/fire_emu_c3946c21f674ef76.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [45631] Listening to port: /var/folders/y3/959kxsqs3tq53k92sl8pkqr40000gn/T/fire_emu_c3946c21f674ef76.sock"}}
+[debug] [2024-04-22T08:18:50.748Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:18:50.749Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-04-22T08:18:50.750Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY"}}
+[debug] [2024-04-22T08:18:50.756Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 7.488083ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 7.488083ms"}}
+[debug] [2024-04-22T08:18:50.757Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:18:50.758Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-22T08:18:50.758Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-22T08:18:50.758Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:18:50.762Z] [work-queue] {"queuedWork":["/test-firebase-e96b8/us-central1/api/api/login/user-2024-04-22T08:18:50.762Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:18:50.763Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/test-firebase-e96b8/us-central1/api/api/login/user-2024-04-22T08:18:50.762Z"],"workRunningCount":1}
+[debug] [2024-04-22T08:18:50.763Z] Accepted request POST /test-firebase-e96b8/us-central1/api/api/login/user --> us-central1-api
+[debug] [2024-04-22T08:18:50.764Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-22T08:18:50.764Z] [functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/login/user, mapping to path=/api/login/user {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/login/user, mapping to path=/api/login/user"}}
+[debug] [2024-04-22T08:18:50.764Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-04-22T08:18:50.765Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY"}}
+[debug] [2024-04-22T08:18:50.780Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 15.519458ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 15.519458ms"}}
+[debug] [2024-04-22T08:18:50.781Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:18:50.781Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-22T08:18:50.781Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-22T08:18:50.781Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[info] >  Connected to MongoDB {"user":"Connected to MongoDB","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m Connected to MongoDB"}}
+[info] >  Connection time: 521 ms {"user":"Connection time: 521 ms","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m Connection time: 521 ms"}}
+[info] >  GridFSBucket initialized {"user":"GridFSBucket initialized","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m GridFSBucket initialized"}}
+[debug] [2024-04-22T08:20:06.937Z] [work-queue] {"queuedWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:20:06.937Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:20:06.940Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:20:06.937Z"],"workRunningCount":1}
+[debug] [2024-04-22T08:20:06.940Z] Accepted request OPTIONS /test-firebase-e96b8/us-central1/api/api/update-image --> us-central1-api
+[debug] [2024-04-22T08:20:06.946Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-22T08:20:06.948Z] [functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image"}}
+[debug] [2024-04-22T08:20:06.949Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-04-22T08:20:06.950Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY"}}
+[debug] [2024-04-22T08:20:06.975Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 25.60225ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 25.60225ms"}}
+[debug] [2024-04-22T08:20:06.977Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:20:06.977Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-22T08:20:06.977Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-22T08:20:06.977Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:20:06.995Z] [work-queue] {"queuedWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:20:06.995Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:20:07.002Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:20:06.995Z"],"workRunningCount":1}
+[debug] [2024-04-22T08:20:07.002Z] Accepted request POST /test-firebase-e96b8/us-central1/api/api/update-image --> us-central1-api
+[debug] [2024-04-22T08:20:07.005Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-22T08:20:07.006Z] [functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image"}}
+[debug] [2024-04-22T08:20:07.006Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-04-22T08:20:07.007Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY"}}
+[debug] [2024-04-22T08:20:07.046Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 39.445584ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 39.445584ms"}}
+[debug] [2024-04-22T08:20:07.047Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:20:07.047Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-22T08:20:07.047Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-22T08:20:07.047Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:20:08.581Z] [work-queue] {"queuedWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:20:08.581Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:20:08.582Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:20:08.581Z"],"workRunningCount":1}
+[debug] [2024-04-22T08:20:08.582Z] Accepted request POST /test-firebase-e96b8/us-central1/api/api/update-image --> us-central1-api
+[debug] [2024-04-22T08:20:08.589Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-22T08:20:08.596Z] [functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image"}}
+[debug] [2024-04-22T08:20:08.596Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-04-22T08:20:08.600Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY"}}
+[debug] [2024-04-22T08:20:08.673Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 77.240333ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 77.240333ms"}}
+[debug] [2024-04-22T08:20:08.680Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:20:08.680Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-22T08:20:08.681Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-22T08:20:08.681Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:20:29.181Z] [work-queue] {"queuedWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:20:29.180Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:20:29.183Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:20:29.180Z"],"workRunningCount":1}
+[debug] [2024-04-22T08:20:29.183Z] Accepted request OPTIONS /test-firebase-e96b8/us-central1/api/api/update-image --> us-central1-api
+[debug] [2024-04-22T08:20:29.192Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-22T08:20:29.199Z] [functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image"}}
+[debug] [2024-04-22T08:20:29.200Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-04-22T08:20:29.202Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY"}}
+[debug] [2024-04-22T08:20:29.228Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 26.874291ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 26.874291ms"}}
+[debug] [2024-04-22T08:20:29.230Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:20:29.230Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-22T08:20:29.230Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-22T08:20:29.230Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:20:29.241Z] [work-queue] {"queuedWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:20:29.241Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:20:29.242Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:20:29.241Z"],"workRunningCount":1}
+[debug] [2024-04-22T08:20:29.242Z] Accepted request POST /test-firebase-e96b8/us-central1/api/api/update-image --> us-central1-api
+[debug] [2024-04-22T08:20:29.242Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-22T08:20:29.242Z] [functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image"}}
+[debug] [2024-04-22T08:20:29.243Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-04-22T08:20:29.245Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY"}}
+[debug] [2024-04-22T08:20:29.267Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 22.611875ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 22.611875ms"}}
+[debug] [2024-04-22T08:20:29.268Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:20:29.268Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-22T08:20:29.268Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-22T08:20:29.268Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:21:10.905Z] [work-queue] {"queuedWork":["/test-firebase-e96b8/us-central1/api/update-image-2024-04-22T08:21:10.905Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:21:10.907Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/test-firebase-e96b8/us-central1/api/update-image-2024-04-22T08:21:10.905Z"],"workRunningCount":1}
+[debug] [2024-04-22T08:21:10.907Z] Accepted request OPTIONS /test-firebase-e96b8/us-central1/api/update-image --> us-central1-api
+[debug] [2024-04-22T08:21:10.910Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-22T08:21:10.911Z] [functions] Got req.url=/test-firebase-e96b8/us-central1/api/update-image, mapping to path=/update-image {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/test-firebase-e96b8/us-central1/api/update-image, mapping to path=/update-image"}}
+[debug] [2024-04-22T08:21:10.913Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-04-22T08:21:10.914Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY"}}
+[debug] [2024-04-22T08:21:10.935Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 22.619375ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 22.619375ms"}}
+[debug] [2024-04-22T08:21:10.938Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:21:10.938Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-22T08:21:10.938Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-22T08:21:10.945Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:21:10.970Z] [work-queue] {"queuedWork":["/test-firebase-e96b8/us-central1/api/update-image-2024-04-22T08:21:10.970Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:21:10.971Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/test-firebase-e96b8/us-central1/api/update-image-2024-04-22T08:21:10.970Z"],"workRunningCount":1}
+[debug] [2024-04-22T08:21:10.971Z] Accepted request POST /test-firebase-e96b8/us-central1/api/update-image --> us-central1-api
+[debug] [2024-04-22T08:21:10.972Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-22T08:21:10.973Z] [functions] Got req.url=/test-firebase-e96b8/us-central1/api/update-image, mapping to path=/update-image {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/test-firebase-e96b8/us-central1/api/update-image, mapping to path=/update-image"}}
+[debug] [2024-04-22T08:21:10.974Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-04-22T08:21:10.975Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY"}}
+[debug] [2024-04-22T08:21:10.999Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 24.979042ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 24.979042ms"}}
+[debug] [2024-04-22T08:21:11.002Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:21:11.003Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-22T08:21:11.003Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-22T08:21:11.004Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:21:21.843Z] [work-queue] {"queuedWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:21:21.842Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:21:21.845Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:21:21.842Z"],"workRunningCount":1}
+[debug] [2024-04-22T08:21:21.846Z] Accepted request OPTIONS /test-firebase-e96b8/us-central1/api/api/update-image --> us-central1-api
+[debug] [2024-04-22T08:21:21.849Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-22T08:21:21.850Z] [functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image"}}
+[debug] [2024-04-22T08:21:21.852Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-04-22T08:21:21.854Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY"}}
+[debug] [2024-04-22T08:21:21.875Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 21.979875ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 21.979875ms"}}
+[debug] [2024-04-22T08:21:21.876Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:21:21.878Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-22T08:21:21.879Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-22T08:21:21.880Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:21:21.892Z] [work-queue] {"queuedWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:21:21.892Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:21:21.894Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:21:21.892Z"],"workRunningCount":1}
+[debug] [2024-04-22T08:21:21.894Z] Accepted request POST /test-firebase-e96b8/us-central1/api/api/update-image --> us-central1-api
+[debug] [2024-04-22T08:21:21.896Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-22T08:21:21.897Z] [functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image"}}
+[debug] [2024-04-22T08:21:21.898Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-04-22T08:21:21.903Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY"}}
+[debug] [2024-04-22T08:21:21.977Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 77.308917ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 77.308917ms"}}
+[debug] [2024-04-22T08:21:21.981Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:21:21.981Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-22T08:21:21.981Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-22T08:21:21.982Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:22:44.086Z] [work-queue] {"queuedWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:22:44.085Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:22:44.092Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:22:44.085Z"],"workRunningCount":1}
+[debug] [2024-04-22T08:22:44.092Z] Accepted request OPTIONS /test-firebase-e96b8/us-central1/api/api/update-image --> us-central1-api
+[debug] [2024-04-22T08:22:44.100Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-22T08:22:44.103Z] [functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image"}}
+[debug] [2024-04-22T08:22:44.105Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-04-22T08:22:44.108Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY"}}
+[debug] [2024-04-22T08:22:44.128Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 21.130083ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 21.130083ms"}}
+[debug] [2024-04-22T08:22:44.129Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:22:44.129Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-22T08:22:44.129Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-22T08:22:44.129Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:22:44.136Z] [work-queue] {"queuedWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:22:44.136Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:22:44.136Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:22:44.136Z"],"workRunningCount":1}
+[debug] [2024-04-22T08:22:44.136Z] Accepted request POST /test-firebase-e96b8/us-central1/api/api/update-image --> us-central1-api
+[debug] [2024-04-22T08:22:44.136Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-22T08:22:44.137Z] [functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image"}}
+[debug] [2024-04-22T08:22:44.137Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-04-22T08:22:44.137Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY"}}
+[debug] [2024-04-22T08:22:44.152Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 15.001292ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 15.001292ms"}}
+[debug] [2024-04-22T08:22:44.152Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:22:44.152Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-22T08:22:44.152Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-22T08:22:44.152Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:24:01.820Z] [work-queue] {"queuedWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:24:01.819Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:24:01.825Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:24:01.819Z"],"workRunningCount":1}
+[debug] [2024-04-22T08:24:01.825Z] Accepted request OPTIONS /test-firebase-e96b8/us-central1/api/api/update-image --> us-central1-api
+[debug] [2024-04-22T08:24:01.828Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-22T08:24:01.829Z] [functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image"}}
+[debug] [2024-04-22T08:24:01.831Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-04-22T08:24:01.834Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY"}}
+[debug] [2024-04-22T08:24:01.848Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 15.158917ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 15.158917ms"}}
+[debug] [2024-04-22T08:24:01.849Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:24:01.849Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-22T08:24:01.849Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-22T08:24:01.849Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:24:01.853Z] [work-queue] {"queuedWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:24:01.853Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-22T08:24:01.853Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/test-firebase-e96b8/us-central1/api/api/update-image-2024-04-22T08:24:01.853Z"],"workRunningCount":1}
+[debug] [2024-04-22T08:24:01.853Z] Accepted request POST /test-firebase-e96b8/us-central1/api/api/update-image --> us-central1-api
+[debug] [2024-04-22T08:24:01.853Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-22T08:24:01.853Z] [functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/test-firebase-e96b8/us-central1/api/api/update-image, mapping to path=/api/update-image"}}
+[debug] [2024-04-22T08:24:01.853Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2024-04-22T08:24:01.853Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: BUSY"}}
+[debug] [2024-04-22T08:24:01.877Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 24.638875ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 24.638875ms"}}
+[debug] [2024-04-22T08:24:01.879Z] [worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-955246c5-9f69-4a39-b69f-3b831041d74e]: IDLE"}}
+[debug] [2024-04-22T08:24:01.879Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-22T08:24:01.880Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-22T08:24:01.880Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
